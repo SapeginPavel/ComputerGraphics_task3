@@ -10,6 +10,9 @@ import java.util.List;
 public class GraphicProcessing {
 
     public static Point[] getPointsForGraphicCubicSplineMethod(String graphicAsString, double width, double height, double sizeOfGrid, double moveX, double moveY, int N) {
+        if (graphicAsString.equals("")) {
+            return null;
+        }
         Expression mainExpression = new ExpressionBuilder(graphicAsString).variables("x").build();
         Point[] boundaryPoints = getBoundaryPoints(mainExpression, width, sizeOfGrid, moveX);
         if (boundaryPoints == null) {

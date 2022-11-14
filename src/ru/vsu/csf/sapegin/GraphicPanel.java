@@ -3,8 +3,6 @@ package ru.vsu.csf.sapegin;
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GraphicPanel extends JPanel {
     private int width;
@@ -21,7 +19,8 @@ public class GraphicPanel extends JPanel {
 
     private String functionAsStr;
 
-    private double sizeOfGrid = 40;
+    private static final int DEFAULT_SIZE_OF_GRID = 40;
+    private double sizeOfGrid = DEFAULT_SIZE_OF_GRID;
     private static final Font DEFAULT_FONT = new Font("Times New Roman", Font.PLAIN, 14);
 
     private int N = 10;
@@ -133,7 +132,7 @@ public class GraphicPanel extends JPanel {
     }
 
     public void setStartScale() {
-        sizeOfGrid = 20;
+        sizeOfGrid = DEFAULT_SIZE_OF_GRID;
         moveX = 0;
         moveY = 0;
         repaint();
